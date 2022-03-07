@@ -17,7 +17,19 @@ echo form_open('purchases/save/'.$purchase_info->purchase_id,array('id'=>'purcha
 </div>
 
 <div class="field_row clearfix">
-<?php echo form_label($this->lang->line('purchases_date').':', 'timestamp',array('class'=>'wide')); ?>
+<?php if ($this->config->item('purchase_timestamp_override')==1) { ?>
+	<?php echo form_label($this->lang->line('purchases_date').':', 'timestamp',array('class'=>'wide')); ?>
+	<div class='form_field'>
+	<?php echo form_input(array(
+		'id'=>'timestamp',
+		'name'=>'timestamp',
+		'type'=>'datetime',
+		'value'=>$purchase_info->purchase_date!=''?$purchase_info->purchase_date:date("Y-m-d H:i:s"),
+		)
+	);?>
+	</div>
+<?php } else { ?>
+	<?php echo form_label($this->lang->line('purchases_date').':', 'timestamp',array('class'=>'wide')); ?>
 	<div class='form_field'>
 	<?php echo form_input(array(
 		'value'=>$purchase_info->purchase_date!=''?$purchase_info->purchase_date:date("Y-m-d H:i:s"),
@@ -25,6 +37,7 @@ echo form_open('purchases/save/'.$purchase_info->purchase_id,array('id'=>'purcha
 	);?>
 	<?php echo form_hidden('timestamp',$purchase_info->purchase_date!=''?$purchase_info->purchase_date:date("Y-m-d H:i:s")); ?>
 	</div>
+<?php } ?>
 </div>
 
 <div class="field_row clearfix">

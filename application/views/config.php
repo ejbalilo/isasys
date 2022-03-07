@@ -292,6 +292,29 @@ echo form_close();
 <div id="feedback_bar"></div>
 <?php } ?>
 
+<div class="field_row clearfix">	
+<?php echo form_label('Enable new Collectible timestamp override:', 'receivable_timestamp_override', array('class'=>'wide')); ?>
+	<div class='form_field'>
+	<?php echo form_checkbox(array(
+		'name'=>'receivable_timestamp_override',
+		'id'=>'receivable_timestamp_override',
+		'value'=>'1',
+		'checked'=>$this->config->item('receivable_timestamp_override')));?>
+	</div>
+</div>
+
+<div class="field_row clearfix">	
+<?php echo form_label('Enable new Purchase timestamp override:', 'purchase_timestamp_override', array('class'=>'wide')); ?>
+	<div class='form_field'>
+	<?php echo form_checkbox(array(
+		'name'=>'purchase_timestamp_override',
+		'id'=>'purchase_timestamp_override',
+		'value'=>'1',
+		'checked'=>$this->config->item('purchase_timestamp_override')));?>
+	</div>
+</div>
+
+
 </fieldset>
 </div>
 

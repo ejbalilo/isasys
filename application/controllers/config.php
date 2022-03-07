@@ -29,7 +29,9 @@ class Config extends Secure_area
 		'return_policy'=>$this->input->post('return_policy'),
 		'language'=>$this->input->post('language'),
 		'timezone'=>$this->input->post('timezone'),
-		'print_after_sale'=>$this->input->post('print_after_sale')	
+		'print_after_sale'=>$this->input->post('print_after_sale'),
+		'receivable_timestamp_override'=>$this->input->post('receivable_timestamp_override'),
+		'purchase_timestamp_override'=>$this->input->post('purchase_timestamp_override')
 		);
 		
 		if($_SERVER['HTTP_HOST'] !='ospos.pappastech.com' && $this->Appconfig->batch_save($batch_save_data))

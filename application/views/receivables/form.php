@@ -17,7 +17,19 @@ echo form_open('receivables/save/'.$receivable_info->receivable_id,array('id'=>'
 </div>
 
 <div class="field_row clearfix">
-<?php echo form_label($this->lang->line('receivables_date').':', 'timestamp',array('class'=>'wide')); ?>
+<?php if ($this->config->item('receivable_timestamp_override')==1) { ?>
+	<?php echo form_label($this->lang->line('receivables_date').':', 'timestamp',array('class'=>'wide')); ?>
+	<div class='form_field'>
+	<?php echo form_input(array(
+		'id'=>'timestamp',
+		'name'=>'timestamp',
+		'type'=>'datetime',
+		'value'=>$receivable_info->receivable_date!=''?$receivable_info->receivable_date:date("Y-m-d H:i:s"),
+		)
+	);?>
+	</div>
+<?php } else { ?>
+	<?php echo form_label($this->lang->line('receivables_date').':', 'timestamp',array('class'=>'wide')); ?>
 	<div class='form_field'>
 	<?php echo form_input(array(
 		'value'=>$receivable_info->receivable_date!=''?$receivable_info->receivable_date:date("Y-m-d H:i:s"),
@@ -25,6 +37,7 @@ echo form_open('receivables/save/'.$receivable_info->receivable_id,array('id'=>'
 	);?>
 	<?php echo form_hidden('timestamp',$receivable_info->receivable_date!=''?$receivable_info->receivable_date:date("Y-m-d H:i:s")); ?>
 	</div>
+<?php } ?>
 </div>
 
 <div class="field_row clearfix">
