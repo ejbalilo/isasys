@@ -1,0 +1,215 @@
+#required_fields_message
+{
+	width: 100%;
+	text-align: center;
+	margin-bottom: 3px;
+	font-style: italic;
+}
+
+#customer_basic_info,#item_basic_info,#item_number_info,#supplier_basic_info
+{
+	padding: 5px;
+}
+
+#scan_item_number.loading
+{
+	background-image: url(../images/spinner_small.gif);
+	background-position:center right;
+	background-repeat:no-repeat;	
+}
+
+#info_provided_by
+{
+	display:none;
+	font-weight:bold;
+}
+
+#employee_basic_info
+{
+	float:left;
+	width:47%;
+	padding:5px;
+}
+
+#employee_login_info
+{
+	float:left;
+	width:47%;
+	margin-left:5px;
+	padding:5px;
+}
+
+#permission_list
+{
+	list-style:none;
+}
+
+#permission_list li
+{
+	padding:5px;	
+}
+
+#permission_list input
+{
+	top:3px;
+}
+
+#employee_permission_info
+{
+	float:left;
+	width:47%;
+	margin-left:5px;
+	padding:5px;
+}
+#employee_permission_info p
+{
+	font-weight:bold;
+}
+
+#employee_permission_info span.small
+{
+	font-style:italic;
+	font-size:80%;
+}
+
+#error_message_box
+{
+	margin-bottom:7px;
+	margin-left:20px;
+	color:red;	
+}
+#item_kit_items_title
+{
+	text-align: center;
+}
+#item_kit_items
+{
+	width: 100%;
+}
+
+#item_kit_items th
+{
+	text-align: center;
+	font-weight: bold;
+}
+
+#item_kit_items td
+{
+	text-align: center;
+}
+
+#receivable_items_title
+{
+	text-align: center;
+}
+
+#receivable_items
+{
+	cell-spacing: 0px;
+	border: 1px #e8e8e8 solid;
+	width: 99%;
+}
+#receivable_items th
+{
+	color: #000000;
+	background: #e8e8e8;
+	border: 0px #e8e8e8 solid;
+	text-align: center;
+	font-weight: bold;
+}
+
+#receivable_items td
+{
+	border: 1px #e8e8e8 solid;
+	text-align: center;
+}
+
+#receivable_payments
+{
+	cell-spacing: 0px;
+	border: 1px #e8e8e8 solid;
+	width: 99%;
+}
+#receivable_payments th
+{
+	color: #000000;
+	background: #e8e8e8;
+	border: 0px #e8e8e8 solid;
+	text-align: center;
+	font-weight: bold;
+}
+
+#receivable_payments td
+{
+	border: 1px #e8e8e8 solid;
+	text-align: center;
+}
+
+#purchase_items_title
+{
+	text-align: center;
+}
+
+#purchase_items
+{
+	cell-spacing: 0px;
+	border: 1px #e8e8e8 solid;
+	width: 99%;
+}
+#purchase_items th
+{
+	color: #000000;
+	background: #e8e8e8;
+	border: 0px #e8e8e8 solid;
+	text-align: center;
+	font-weight: bold;
+}
+
+#purchase_items td
+{
+	border: 1px #e8e8e8 solid;
+	text-align: center;
+}
+
+#purchase_payments
+{
+	cell-spacing: 0px;
+	border: 1px #e8e8e8 solid;
+	width: 99%;
+}
+#purchase_payments th
+{
+	color: #000000;
+	background: #e8e8e8;
+	border: 0px #e8e8e8 solid;
+	text-align: center;
+	font-weight: bold;
+}
+
+#purchase_payments td
+{
+	border: 1px #e8e8e8 solid;
+	text-align: center;
+}
+
+#form_table
+{
+	cell-spacing: 0px;
+	border: 1px #000000 solid;
+}
+
+#form_table td
+{
+	border: 1px #000000 solid;
+}
+
+#form_table_clear
+{
+	cell-spacing: 0px;
+	border: 0px;
+}
+
+#form_table_clear td
+{
+	border: 0px;
+}
