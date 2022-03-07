@@ -117,8 +117,8 @@ if (isset($error_message))
 			<td colspan="3"><b>Approved By:</b></td>
 		</tr>
 		<tr>
-			<td colspan="2"><br /><table><tr><td>____________________<td></tr><tr><td align="center">JENYLYN T. PAGALAN</td></tr></table></td>
-			<td><br /><table><tr><td>____________________<td></tr><tr><td align="center">FERNANDO N. PATRIARCA</td></tr></table></td>
+			<td colspan="2"><br /><table><tr><td>____________________<td></tr><tr><td align="center">SOPHIA PATRIARCA</td></tr></table></td>
+			<td><br /><table><tr><td>____________________<td></tr><tr><td align="center">SOPHIA PATRIARCA</td></tr></table></td>
 			<td colspan="3"><br /><table><tr><td>____________________<td></tr><tr><td align="center">JINA N. MIJARES</td></tr></table></td>
 		</tr>
 	</table>
