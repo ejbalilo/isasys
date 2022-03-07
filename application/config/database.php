@@ -49,9 +49,9 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'sthunna_isasys';
-$db['default']['password'] = '5pGbs2G3xFunbZn';
-$db['default']['database'] = 'sthunna_isasys';
+$db['default']['username'] = 'root';
+$db['default']['password'] = '';
+$db['default']['database'] = 'isasys';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = 'ospos_';
 $db['default']['pconnect'] = FALSE;
