@@ -117,9 +117,12 @@ class Purchases extends Secure_area implements iData_controller
 				{
 					$status = 2;
 				}
-				else if($this->Employee->has_permission('purchases_undo',$this->Employee->get_logged_in_employee_info()->person_id) && $this->input->post('undo') && $status==2)
+				else if($this->Employee->has_permission('purchases_undo',$this->Employee->get_logged_in_employee_info()->person_id) && $this->input->post('undo'))
 				{
-					$status = 0;
+					if ($status==2)
+						$status = 1;
+					else if ($status==1)
+						$status = 0;
 				}
 				
 				$this->db->where('purchase_id', $purchase_id);
@@ -189,6 +192,18 @@ class Purchases extends Secure_area implements iData_controller
 					}
 					$result = $this->Purchase_items->save($purchase_items, $purchase_id);
 				}
+
+				if ($this->input->post('undo'))
+				{
+					$purchase_items = array();
+					foreach($this->Purchase_items->get_info($purchase_id) as $item)
+					{
+						if($item['quantity_received']!=0)
+						{
+							$this->update_inventory($purchase_id,$item['item_id'],-$item['quantity_received'],$status);
+						}
+					}
+				}
 			}
 			else if($status==2 && $this->input->post('finalize'))
 			{
@@ -220,17 +235,6 @@ class Purchases extends Secure_area implements iData_controller
 							);
 					}
 					$result = $this->Purchase_items->save($purchase_items, $purchase_id);
-				}
-			}
-			else if($status==0 && $this->input->post('undo'))
-			{
-				$purchase_items = array();
-				foreach($this->Purchase_items->get_info($purchase_id) as $item)
-				{
-					if($item['quantity_received']!=0)
-					{
-						$this->update_inventory($purchase_id,$item['item_id'],-$item['quantity_received'],$status);
-					}
 				}
 			}
 		}
@@ -283,7 +287,7 @@ class Purchases extends Secure_area implements iData_controller
 		{
 			$trans_comment = "PURCHASE $po_number";
 		}
-		else if($status==0)
+		else if($status==1)
 		{
 			$trans_comment = "PURCHASE UNDO $po_number";
 		}

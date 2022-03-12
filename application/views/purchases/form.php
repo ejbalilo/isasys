@@ -184,13 +184,16 @@ if($purchase_info->status==0 && $this->Employee->has_permission('purchases_appro
 {
 	echo form_checkbox(array('name'=>'approve_request','id'=>'approve_request','value'=>'checked','class'=>'float_left'));
 	echo "Approve Purchase Order";
+	echo "<br />";
 }
 else if($purchase_info->status==1 && $this->Employee->has_permission('purchases_receive_discount',$this->Employee->get_logged_in_employee_info()->person_id))
 {
 	echo form_checkbox(array('name'=>'finalize','id'=>'finalize','value'=>'checked','class'=>'float_left'));
 	echo "Finalize Receives/Discounts";
+	echo "<br />";
 }
-else if($purchase_info->status==2 && $this->Employee->has_permission('purchases_undo',$this->Employee->get_logged_in_employee_info()->person_id))
+
+if($purchase_info->status>0 && $this->Employee->has_permission('purchases_undo',$this->Employee->get_logged_in_employee_info()->person_id))
 {
 	echo form_checkbox(array('name'=>'undo','id'=>'undo','value'=>'checked','class'=>'float_left'));
 	echo "Undo Purchase";
