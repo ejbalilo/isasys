@@ -103,12 +103,15 @@ echo form_submit(array(
 <?php
 $total_receivable_amount = $this->Receivable_items->get_total_receivable_amount($receivable_info->receivable_id,date("U")+86400)-$this->Receivable_items->get_total_discount_receivable_amount($receivable_info->receivable_id,date("U")+86400);
 $total_payments = $this->Receivable_payments->get_total_payments($receivable_info->receivable_id,0);
+$tax_amount = $receivable_info->tax_amount;
 ?>
 <br />
 <table>
-<tr><td><b>Total Receivable Amount:</b></td><td style="text-align:right"><?php echo to_currency($total_receivable_amount) ?></td></tr>
+<tr><td><b>Gross Amount:</b></td><td style="text-align:right"><?php echo to_currency($total_receivable_amount) ?></td></tr>
+<tr><td><b>Tax Amount:</b></td><td style="text-align:right"><?php echo to_currency($tax_amount) ?></td></tr>
+<tr><td><b>Net Amount:</b></td><td style="text-align:right"><?php echo to_currency($total_receivable_amount-$tax_amount) ?></td></tr>
 <tr><td><b>Total Payment:</b></td><td style="text-align:right"><?php echo to_currency($total_payments) ?></td></tr>
-<tr><td><b>Remaining Balance:</b></td><td style="text-align:right"><?php echo to_currency($total_receivable_amount-$total_payments) ?></td></tr>
+<tr><td><b>Remaining Balance:</b></td><td style="text-align:right"><?php echo to_currency($total_receivable_amount-$total_payments-$tax_amount) ?></td></tr>
 </table>
 </center>
 </fieldset>

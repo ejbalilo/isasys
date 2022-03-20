@@ -113,6 +113,18 @@ echo form_open('receivables/save/'.$receivable_info->receivable_id,array('id'=>'
 	</div>
 </div>
 
+<?php if($receivable_info->receivable_id>0) { ?>
+<div class="field_row clearfix">
+<?php echo form_label('Tax Amount: ', 'tax_amount',array('class'=>'wide')); ?>
+	<div class='form_field'>
+	<?php
+		$input = array('name'=>'tax_amount','id'=>'tax_amount','value'=>($receivable_info->status==0?$receivable_info->tax_amount:$receivable_info->tax_amount));
+		echo form_input($input);
+	?>
+	</div>
+</div>
+<?php } ?>
+
 <div class="field_row clearfix">
 <?php echo form_label($this->lang->line('receivables_comments').':', 'comments',array('class'=>'wide')); ?>
 	<div class='form_field'>

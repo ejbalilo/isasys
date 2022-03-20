@@ -207,7 +207,12 @@ class Receivables extends Secure_area implements iData_controller
 				$receivable_data = array_merge($receivable_data,array('status'=>1));
 			}
 		}
-		$receivable_data = array_merge($receivable_data,array('issued_to'=>$this->input->post('issued_to'),'destination'=>$this->input->post('destination'),'comments'=>$this->input->post('comments')));
+		$receivable_data = array_merge($receivable_data,array(
+			'tax_amount'=>$this->input->post('tax_amount'),
+			'issued_to'=>$this->input->post('issued_to'),
+			'destination'=>$this->input->post('destination'),
+			'comments'=>$this->input->post('comments'),
+		));
 
 		if($this->Receivable->save($receivable_data,$receivable_id))
 		{

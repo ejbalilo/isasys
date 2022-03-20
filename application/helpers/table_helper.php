@@ -452,7 +452,7 @@ function get_receivable_data_row($receivable,$controller)
 	}
 	else if($receivable->status==2)
 	{
-		$balance = ($CI->Receivable_items->get_total_receivable_amount($receivable->receivable_id,date("U")+86400)-$CI->Receivable_items->get_total_discount_receivable_amount($receivable->receivable_id,date("U")+86400)-$CI->Receivable_payments->get_total_payments($receivable->receivable_id,0))*-1;
+		$balance = ($CI->Receivable_items->get_total_receivable_amount($receivable->receivable_id,date("U")+86400)-$CI->Receivable_items->get_total_discount_receivable_amount($receivable->receivable_id,date("U")+86400)-$CI->Receivable_payments->get_total_payments($receivable->receivable_id,0)-$receivable->tax_amount)*-1;
 		if(number_format($balance,4)<0)
 			$status = "Waiting for Payments<br />(Balance: ".to_currency($balance*-1).")";
 		else
