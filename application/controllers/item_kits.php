@@ -56,8 +56,8 @@ class Item_kits extends Secure_area implements iData_controller
 		$item_kit_data = array(
 		'name'=>$this->input->post('name'),
 		'description'=>$this->input->post('description'),
-		'unit_price'=>$this->input->post('unit_price'),
-		'unit_price2'=>$this->input->post('unit_price2'),
+		'unit_price'=>(float)($this->input->post('unit_price')),
+		'unit_price2'=>(float)($this->input->post('unit_price2')),
 		'is_discountable'=>$this->input->post('is_discountable')
 		);
 		$x = 0;
