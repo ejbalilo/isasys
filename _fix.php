@@ -1,6 +1,6 @@
 <?php
 session_start();
-$con = mysqli_connect("localhost","root","woY4tBMDWifW","sthunna_isasys");
+$con = mysqli_connect("localhost","root","zC8jzwSnw3MXTdcE","sthunna_isasys");
 if(!$con)
 	die("Could not connect: " . mysqli_error($con));
 
