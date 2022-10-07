@@ -862,7 +862,7 @@ class Reports extends Secure_area
 			$temp = array($row['receivable_id'], $row['sale_date'], $row['items_purchased'], $row['customer_name'], to_currency($row['subtotal']), to_currency($row['total']));
 			if($show_profit)
 				$temp = array_merge($temp,array(to_currency($row['profit'])));
-			$temp = array_merge($temp,array(to_currency($row['total']-$report_data['payments'][$key]['total_payments']), to_currency($row['sales_agent_commission']/100*$row['total']), $row['comments']));
+			$temp = array_merge($temp,array(to_currency($row['total']-$report_data['payments'][$key]['total_payments']-$row['tax_amount']), to_currency($row['sales_agent_commission']/100*$row['total']), $row['comments']));
 			$summary_data[] = $temp;
 			
 			foreach($report_data['details'][$key] as $drow)
